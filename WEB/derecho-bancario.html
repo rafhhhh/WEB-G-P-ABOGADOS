@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derecho Bancario | González & Pulido Abogados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css?v=3">
+    <style>
+        .inner-page-hero {
+            padding: 10rem 0 6rem;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(61, 82, 101, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            text-align: center;
+        }
+        .inner-page-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        /* ── Stats Bar ── */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: -2.5rem;
+            position: relative;
+            z-index: 11;
+            padding: 0 1rem;
+        }
+        .stat-card {
+            background: #FFF;
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .stat-card.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(212,175,55,0.15);
+            border-color: var(--gold);
+        }
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Content Section ── */
+        .inner-content-section {
+            padding: 3rem 0 0;
+        }
+        .content-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 4rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .section-title i {
+            color: var(--gold);
+            font-size: 1.6rem;
+        }
+        .content-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .content-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: rgba(212,175,55,0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(212,175,55,0.1);
+            transition: var(--transition);
+        }
+        .content-list li:hover {
+            background: rgba(212,175,55,0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(212,175,55,0.15);
+            border-color: var(--gold);
+        }
+        .content-list i {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-top: -0.2rem;
+        }
+
+        /* ── Process Timeline ── */
+        .process-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 3rem;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-top: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), rgba(212,175,55,0.15));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 2.5rem;
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .timeline-item.tl-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .timeline-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+            z-index: 2;
+        }
+        .timeline-item h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .timeline-item p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ── Highlights / Why Us ── */
+        .highlights-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 3rem;
+        }
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(61,82,101,0.04) 0%, rgba(212,175,55,0.06) 100%);
+            border: 1px solid rgba(212,175,55,0.12);
+            border-radius: 14px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.12);
+            border-color: var(--gold);
+        }
+        .highlight-card i {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .highlight-card h4 {
+            font-family: var(--font-ui);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.55;
+        }
+
+        /* ── FAQ Accordion ── */
+        .faq-section {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 3rem;
+        }
+        .faq-list {
+            margin-top: 1.5rem;
+        }
+        .faq-item {
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .faq-item:hover {
+            border-color: rgba(212,175,55,0.3);
+        }
+        .faq-item.active {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px rgba(212,175,55,0.1);
+        }
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-family: var(--font-ui);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            gap: 1rem;
+            transition: var(--transition);
+        }
+        .faq-question:hover {
+            background: rgba(212,175,55,0.04);
+        }
+        .faq-question i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 1.5rem 1.25rem;
+        }
+        .faq-answer p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            margin-top: 4rem;
+            background: linear-gradient(135deg, #3d5265 0%, #2a3a4a 100%);
+            border-radius: 16px;
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+            pointer-events: none;
+        }
+        .cta-banner h3 {
+            font-size: 2rem;
+            color: #FFF;
+            margin-bottom: 0.75rem;
+        }
+        .cta-banner > p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        .cta-banner .btn-solid-gold {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ── Bottom spacer ── */
+        .inner-bottom-spacer {
+            padding-bottom: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .inner-page-title { font-size: 2.5rem; }
+            .content-card { padding: 2rem 1.25rem; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: -1.5rem; padding: 0 0.5rem; }
+            .stat-card { padding: 1.25rem 1rem; }
+            .stat-number { font-size: 2rem; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .cta-banner { padding: 2.5rem 1.5rem; }
+            .cta-banner h3 { font-size: 1.5rem; }
+            .timeline { padding-left: 2rem; }
+            .timeline-item { padding-left: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+
+    <header class="header reveal-down">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Logo" class="brand-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="#despacho" class="nav-item">El Despacho</a>
+                <a href="index.html#ubicacion" class="nav-item">Ubicación</a>
+                <div class="nav-dropdown-container">
+                    <a href="#" class="nav-item">Otras Especialidades <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="divorcios.html" class="nav-dropdown-item">Divorcios</a>
+                        <a href="derecho-bancario.html" class="nav-dropdown-item">Derecho Bancario</a>
+                        <a href="accidentes-trafico.html" class="nav-dropdown-item">Accidentes de Tráfico</a>
+                        <a href="derecho-penal.html" class="nav-dropdown-item">Derecho Penal</a>
+                        <a href="gestion-inmobiliaria.html" class="nav-dropdown-item">Gestión Inmobiliaria</a>
+                        <a href="herencias.html" class="nav-dropdown-item">Herencias</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <div class="btn-llamanos-wrap">
+                    <button class="btn-ghost btn-llamanos" onclick="toggleLlamanosMenu(event)">
+                        <i class="ri-phone-line"></i> Llámanos <i class="ri-arrow-down-s-line llamanos-chevron"></i>
+                    </button>
+                    <div class="llamanos-dropdown" id="llamanos-dropdown">
+                        <a href="tel:+34629030475" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 629 030 475
+                        </a>
+                        <a href="tel:+34669129258" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 669 129 258
+                        </a>
+                    </div>
+                </div>
+                <a href="https://wa.me/34629030475" class="btn-ghost btn-sm">
+                    <i class="ri-whatsapp-line"></i> Contacto Rápido
+                </a>
+                <a href="index.html#evaluacion" class="btn-glow btn-sm">
+                    Estudio Gratuito
+                </a>
+            </div>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="inner-page-hero">
+            <div class="container reveal-up">
+                <span class="sub-heading"><i class='ri-bank-line'></i> Especialidad</span>
+                <h1 class="inner-page-title">Derecho Bancario</h1>
+                <p class="hero-desc" style="margin: 0 auto; max-width: 700px; color: var(--text-dim); font-size: 1.15rem;">Protege tu dinero de abusos bancarios. Reclamamos intereses y cláusulas injustas y te ayudamos a cancelar tus deudas con la Ley de Segunda Oportunidad. Solo cobramos si ganamos.</p>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="container">
+            <div class="stats-bar" id="stats-bar">
+                <div class="stat-card">
+            <div class="stat-number"><span class="stat-counter" data-target="2" data-prefix="" data-suffix=" M€">0 M€</span></div>
+            <div class="stat-label">Recuperados para clientes</div>
+        </div>
+<div class="stat-card">
+            <div class="stat-number"><span class="stat-counter" data-target="97" data-prefix="" data-suffix="%">0%</span></div>
+            <div class="stat-label">Casos ganados</div>
+        </div>
+<div class="stat-card">
+            <div class="stat-number"><span class="stat-counter" data-target="800" data-prefix="+" data-suffix="">+0</span></div>
+            <div class="stat-label">Reclamaciones resueltas</div>
+        </div>
+<div class="stat-card">
+            <div class="stat-number"><span class="stat-counter" data-target="0" data-prefix="" data-suffix="">0</span></div>
+            <div class="stat-label">Coste inicial para ti</div>
+        </div>
+
+            </div>
+        </section>
+
+        <section class="inner-content-section">
+            <div class="container">
+                <div class="content-card reveal-up">
+                    <h2 class="section-title"><i class="ri-briefcase-line"></i> Nuestros Servicios</h2>
+                    <ul class="content-list">
+                        <li><i class='ri-check-double-line'></i><div><strong style='display:block; font-size:1.1rem; margin-bottom:0.2rem; color:var(--text-main);'>Reclamación de tarjetas revolving</strong><span style='color:var(--text-dim);'>Recupera los intereses usurarios pagados de más. Miles de sentencias favorables avalan esta reclamación.</span></div></li>
+<li><i class='ri-scales-3-line'></i><div><strong style='display:block; font-size:1.1rem; margin-bottom:0.2rem; color:var(--text-main);'>Ley de Segunda Oportunidad</strong><span style='color:var(--text-dim);'>Cancelación legal de deudas imposibles de pagar. Empezar de cero es posible con la legislación vigente.</span></div></li>
+<li><i class='ri-shield-check-line'></i><div><strong style='display:block; font-size:1.1rem; margin-bottom:0.2rem; color:var(--text-main);'>Cláusulas suelo</strong><span style='color:var(--text-dim);'>Reclamación de importes cobrados irregularmente en tu hipoteca por aplicación de un suelo mínimo.</span></div></li>
+<li><i class='ri-file-paper-2-line'></i><div><strong style='display:block; font-size:1.1rem; margin-bottom:0.2rem; color:var(--text-main);'>Gastos hipotecarios y comisiones</strong><span style='color:var(--text-dim);'>Recupera el dinero que el banco te cobró injustamente por apertura, tasación, notaría y registro.</span></div></li>
+<li><i class='ri-user-star-line'></i><div><strong style='display:block; font-size:1.1rem; margin-bottom:0.2rem; color:var(--text-main);'>Intereses de demora abusivos</strong><span style='color:var(--text-dim);'>Defensa contra penalizaciones desproporcionadas en préstamos personales e hipotecarios.</span></div></li>
+
+                    </ul>
+
+                    <!-- Process Timeline -->
+                    <div class="process-section">
+                        <h2 class="section-title"><i class="ri-route-line"></i> Nuestro modelo de trabajo</h2>
+                        <div class="timeline" id="process-timeline">
+                            <div class="timeline-item" data-step="1">
+            <h4>Estudio gratuito del caso</h4>
+            <p>Analizamos tus contratos, recibos y extractos bancarios para determinar la viabilidad de la reclamación sin coste.</p>
+        </div>
+<div class="timeline-item" data-step="2">
+            <h4>Reclamación extrajudicial</h4>
+            <p>Enviamos requerimiento formal al banco con cálculo de las cantidades a devolver, dando plazo para respuesta.</p>
+        </div>
+<div class="timeline-item" data-step="3">
+            <h4>Negociación con la entidad</h4>
+            <p>Si el banco ofrece un acuerdo, evaluamos si es justo. Si no lo es, preparamos la demanda.</p>
+        </div>
+<div class="timeline-item" data-step="4">
+            <h4>Demanda judicial</h4>
+            <p>Si el banco se niega o la oferta es insuficiente, presentamos demanda y defendemos tus intereses en tribunales.</p>
+        </div>
+<div class="timeline-item" data-step="5">
+            <h4>Solo cobramos si ganamos</h4>
+            <p>Trabajamos a éxito: no pagas nada si no recuperamos tu dinero. Así de simple.</p>
+        </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Why Choose Us -->
+                    <div class="highlights-section">
+                        <h2 class="section-title"><i class="ri-award-line"></i> ¿Por qué elegirnos?</h2>
+                        <div class="highlights-grid">
+                            <div class="highlight-card">
+            <i class="ri-hand-coin-line"></i>
+            <h4>Sin coste si no ganamos</h4>
+            <p>Trabajamos a éxito en la mayoría de reclamaciones. Si no recuperas dinero, no nos debes nada.</p>
+        </div>
+<div class="highlight-card">
+            <i class="ri-bar-chart-grouped-line"></i>
+            <h4>Miles de sentencias favorables</h4>
+            <p>La jurisprudencia del Tribunal Supremo respalda las reclamaciones por abusos bancarios.</p>
+        </div>
+<div class="highlight-card">
+            <i class="ri-calculator-line"></i>
+            <h4>Cálculo exacto de tu reclamación</h4>
+            <p>Calculamos al céntimo lo que el banco te debe, con intereses legales incluidos.</p>
+        </div>
+<div class="highlight-card">
+            <i class="ri-team-line"></i>
+            <h4>Equipo especializado</h4>
+            <p>Abogados con formación específica en derecho bancario y consumo financiero.</p>
+        </div>
+
+                        </div>
+                    </div>
+
+                    <!-- FAQ Accordion -->
+                    <div class="faq-section">
+                        <h2 class="section-title"><i class="ri-question-answer-line"></i> Preguntas Frecuentes</h2>
+                        <div class="faq-list" id="faq-list">
+                            <div class="faq-item">
+            <button class="faq-question">¿Cuánto puedo recuperar por mi tarjeta revolving?<i class="ri-arrow-down-s-line"></i></button>
+            <div class="faq-answer"><p>Depende del importe pagado y los intereses aplicados, pero en la mayoría de casos se recuperan entre 3.000€ y 15.000€. Hacemos el cálculo exacto gratis.</p></div>
+        </div>
+<div class="faq-item">
+            <button class="faq-question">¿Qué es la Ley de Segunda Oportunidad?<i class="ri-arrow-down-s-line"></i></button>
+            <div class="faq-answer"><p>Es un mecanismo legal que permite a personas físicas y autónomos cancelar sus deudas cuando no pueden pagarlas. Incluye un plan de pagos o la exoneración total de la deuda.</p></div>
+        </div>
+<div class="faq-item">
+            <button class="faq-question">¿Puedo reclamar si ya pagué la hipoteca?<i class="ri-arrow-down-s-line"></i></button>
+            <div class="faq-answer"><p>Sí. Puedes reclamar gastos hipotecarios y cláusulas abusivas aunque ya hayas terminado de pagar tu hipoteca. El plazo de prescripción varía según el tipo de reclamación.</p></div>
+        </div>
+<div class="faq-item">
+            <button class="faq-question">¿De verdad no pago nada si no gano?<i class="ri-arrow-down-s-line"></i></button>
+            <div class="faq-answer"><p>Correcto. En las reclamaciones bancarias trabajamos a éxito. Solo cobramos un porcentaje de lo que recuperamos para ti. Si no ganamos, no pagas.</p></div>
+        </div>
+<div class="faq-item">
+            <button class="faq-question">¿Cuánto tarda una reclamación bancaria?<i class="ri-arrow-down-s-line"></i></button>
+            <div class="faq-answer"><p>La vía extrajudicial puede resolverse en 1-3 meses. Si hay que ir a juicio, el plazo se extiende a 6-12 meses dependiendo del juzgado.</p></div>
+        </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CTA Banner -->
+                    <div class="cta-banner">
+                        <h3>¿Necesitas asesoramiento?</h3>
+                        <p>Primera consulta gratuita y sin compromiso. Analizamos tu caso y te orientamos sobre la mejor estrategia.</p>
+                        <a href="index.html#evaluacion" class="btn-solid-gold" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">Estudiamos tu caso gratis <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="inner-bottom-spacer"></div>
+    </main>
+
+    
+    <!-- Fixed WhatsApp -->
+    <a href="https://wa.me/34629030475" class="float-wa" aria-label="WhatsApp">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+    <script src="./script.js"></script>
+    <script>
+        function toggleLlamanosMenu(e) { e.stopPropagation(); const wrap = e.currentTarget.closest('.btn-llamanos-wrap'); wrap.classList.toggle('open'); }
+        document.addEventListener('click', function () { document.querySelectorAll('.btn-llamanos-wrap.open').forEach(function (el) { el.classList.remove('open'); }); });
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ── Stats counter animation ──
+        var statsBar = document.getElementById('stats-bar');
+        if (statsBar) {
+            var statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var cards = statsBar.querySelectorAll('.stat-card');
+                        cards.forEach(function(card, i) {
+                            setTimeout(function() {
+                                card.classList.add('revealed');
+                            }, i * 120);
+                        });
+                        statsBar.querySelectorAll('.stat-counter').forEach(function(el) {
+                            var target = parseInt(el.getAttribute('data-target'));
+                            var suffix = el.getAttribute('data-suffix') || '';
+                            var prefix = el.getAttribute('data-prefix') || '';
+                            var duration = 1800;
+                            var startTime = null;
+                            function ease(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
+                            function animate(ts) {
+                                if (!startTime) startTime = ts;
+                                var progress = Math.min((ts - startTime) / duration, 1);
+                                var val = Math.floor(ease(progress) * target);
+                                el.textContent = prefix + val.toLocaleString('es-ES') + suffix;
+                                if (progress < 1) requestAnimationFrame(animate);
+                                else el.textContent = prefix + target.toLocaleString('es-ES') + suffix;
+                            }
+                            requestAnimationFrame(animate);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -50px 0px' });
+            statsObserver.observe(statsBar);
+        }
+
+        // ── Timeline scroll reveal ──
+        var timelineItems = document.querySelectorAll('.timeline-item');
+        if (timelineItems.length) {
+            var tlObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('tl-visible');
+                        tlObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -60px 0px' });
+            timelineItems.forEach(function(item) { tlObserver.observe(item); });
+        }
+
+        // ── FAQ Accordion ──
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = btn.closest('.faq-item');
+                var wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item.active').forEach(function(el) {
+                    el.classList.remove('active');
+                });
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

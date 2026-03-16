@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>González & Pulido | Legal Boutique Madrid</title>
+    <meta name="description"
+        content="Despacho de abogados situado en Madrid, altamente especializado en Derecho de Extranjería y en la obtención de la nacionalidad española.">
+
+    <!-- Fonts: Playfair for Luxury/Authority, Manrope for clean SaaS UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js" defer></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css?v=11">
+    <!-- GSAP for TextType Cursor Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- Dynamic Background Orbs -->
+    <div class="bg-mesh">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+
+
+    <!-- Glass Header -->
+    <header class="header reveal-down">
+        <div class="container header-inner">
+            <a href="#" class="brand">
+                <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Logo" class="brand-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="#despacho" class="nav-item">El Despacho</a>
+                <a href="#ubicacion" class="nav-item">Ubicación</a>
+                <div class="nav-dropdown-container">
+                    <a href="#" class="nav-item">Otras Especialidades <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="divorcios.html" class="nav-dropdown-item">Divorcios</a>
+                        <a href="derecho-bancario.html" class="nav-dropdown-item">Derecho Bancario</a>
+                        <a href="accidentes-trafico.html" class="nav-dropdown-item">Accidentes de Tráfico</a>
+                        <a href="derecho-penal.html" class="nav-dropdown-item">Derecho Penal</a>
+                        <a href="gestion-inmobiliaria.html" class="nav-dropdown-item">Gestión Inmobiliaria</a>
+                        <a href="herencias.html" class="nav-dropdown-item">Herencias</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <div class="btn-llamanos-wrap">
+                    <button class="btn-ghost btn-llamanos" onclick="toggleLlamanosMenu(event)">
+                        <i class="ri-phone-line"></i> Llámanos <i class="ri-arrow-down-s-line llamanos-chevron"></i>
+                    </button>
+                    <div class="llamanos-dropdown" id="llamanos-dropdown">
+                        <a href="tel:+34629030475" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 629 030 475
+                        </a>
+                        <a href="tel:+34669129258" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 669 129 258
+                        </a>
+                    </div>
+                </div>
+                <a href="https://wa.me/34629030475" class="btn-ghost btn-sm">
+                    <i class="ri-whatsapp-line"></i> Contacto Rápido
+                </a>
+                <a href="#evaluacion" class="btn-glow btn-sm">
+                    Estudio Gratuito
+                </a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Logo" class="mobile-nav-logo">
+            <button class="mobile-nav-close" onclick="toggleMobileMenu()">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-body">
+            <a href="#despacho" class="mobile-nav-link" onclick="toggleMobileMenu()">El Despacho</a>
+            <a href="#ubicacion" class="mobile-nav-link" onclick="toggleMobileMenu()">Ubicación</a>
+            
+            <div class="mobile-nav-dropdown-wrapper">
+                <button class="mobile-nav-link mobile-dropdown-toggle" onclick="toggleMobileDropdown(event)">
+                    Otras Especialidades <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div class="mobile-nav-dropdown">
+                    <a href="divorcios.html" class="mobile-dropdown-link">Divorcios</a>
+                    <a href="derecho-bancario.html" class="mobile-dropdown-link">Derecho Bancario</a>
+                    <a href="accidentes-trafico.html" class="mobile-dropdown-link">Accidentes de Tráfico</a>
+                    <a href="derecho-penal.html" class="mobile-dropdown-link">Derecho Penal</a>
+                    <a href="gestion-inmobiliaria.html" class="mobile-dropdown-link">Gestión Inmobiliaria</a>
+                    <a href="herencias.html" class="mobile-dropdown-link">Herencias</a>
+                </div>
+            </div>
+
+            <div class="mobile-nav-contact">
+                <a href="tel:+34629030475" class="btn-solid-gold w-full text-center" style="margin-bottom: 1rem;">
+                    <i class="ri-phone-fill"></i> Llamar Ahora
+                </a>
+                <a href="https://wa.me/34629030475" class="btn-ghost w-full text-center" style="margin-bottom: 1rem;">
+                    <i class="ri-whatsapp-line"></i> WhatsApp
+                </a>
+                <a href="#evaluacion" class="btn-glow w-full text-center" onclick="toggleMobileMenu()">
+                    Estudio Gratuito
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Luxury Hero -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-left">
+                    <h1 class="hero-title reveal-up" style="transition-delay: 0.2s;">
+                        Tus Abogados de <span class="italic-gold">Extranjería</span> en España
+                    </h1>
+                    <p class="hero-desc reveal-up" style="transition-delay: 0.3s;">
+                        Tu vida en España empieza aquí. En González Pulido Abogados, expertos en Extranjería y
+                        Nacionalidad, te brindamos la seguridad jurídica necesaria para que nada frene tus sueños.
+                    </p>
+
+                    <div class="hero-btn-group reveal-up" style="transition-delay: 0.4s;">
+                        <a href="#evaluacion" class="btn-solid-gold">Iniciar Evaluación en 60s <i
+                                class="ri-arrow-right-line"></i></a>
+                        <div class="hero-reviews">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                    class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                                <span><strong>4.9/5</strong> (181 reseñas de Google) <img
+                                        src="./multimedia/google-maps-pin.png" alt="Google Maps"
+                                        style="height: 24px; vertical-align: middle; margin-left: 6px; display: inline-block; padding-bottom: 2px;"></span>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Stats / Trust Break -->
+        <section class="trust-break">
+            <div class="grid-pattern" style="opacity: 0.15;"></div>
+            <div class="container trust-flex reveal-up">
+                <div class="stat-item">
+                    <h3 class="stat-num" data-val="3000">+<span class="counter">0</span></h3>
+                    <p>Clientes atendidos</p>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <h3 class="stat-num" data-val="10000">+<span class="counter">0</span></h3>
+                    <p>Casos Gestionados</p>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <h3 class="stat-num" data-val="99"><span class="counter">0</span>%</h3>
+                    <p>Casos de Exito</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ciudades Rotating Text -->
+        <section class="rotating-text-section reveal-up" style="padding: 5rem 0 1rem; background-color: var(--bg-soft); position: relative;">
+            <div class="grid-pattern" style="opacity: 0.2;"></div>
+            <div class="container text-center" style="position: relative; z-index: 2;">
+                <h2 class="cities-title" style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap;">
+                    Gestionamos clientes de 
+                    <span class="rotating-text-wrapper" style="background-color: var(--gold); color: #FFFFFF; padding: 0.4rem 1.2rem; border-radius: 0.75rem; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; line-height: 1; width: 280px; height: 3.8rem; vertical-align: middle; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);">
+                        <span id="rotating-text" style="display: flex;"></span>
+                    </span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Testimonials Marquee -->
+        <section class="testimonials-marquee section-soft" style="padding-top: 1rem;">
+            <div class="grid-pattern" style="opacity: 0.2;"></div>
+            <div class="marquee-container group">
+                <div class="marquee-track">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Despacho eficiente, centrado en resolver el problema y no en
+                            facturar por facturar. Desde el principio noté la preocupación y confianza."</p>
+                        <h4 class="testimonial-author">- Armando Ramirez Diaz</h4>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Excelente atención y servicio. El personal es muy amable y
+                            profesional. Me acompañaron durante todo el proceso migratorio con claridad."</p>
+                        <h4 class="testimonial-author">- Claudio Paim</h4>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Excelente servicio, en 3 meses tuve mi residencia solucionada. Muy
+                            contenta con la eficacia de este despacho en la fecha indicada."</p>
+                        <h4 class="testimonial-author">- Silvana Freita revollo</h4>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Me acompañaron en el proceso de residencia por trabajo y ya recibí
+                            la aprobación. Todo el trámite se realizó sin problemas, excelente."</p>
+                        <h4 class="testimonial-author">- Miguel E. Rodriguez Posada</h4>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"¡Muy buena atención! Me ayudaron con todas las dudas y me
+                            acompañaron en todo el proceso para tener mis papeles. 100% recomendable."</p>
+                        <h4 class="testimonial-author">- Emiliano Parandelli</h4>
+                    </div>
+                </div>
+                <!-- Duplicate track for seamless infinite scrolling -->
+                <div class="marquee-track" aria-hidden="true">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Despacho eficiente, centrado en resolver el problema y no en
+                            facturar por facturar. Desde el principio noté la preocupación y confianza."</p>
+                        <h4 class="testimonial-author">- Armando Ramirez Diaz</h4>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Excelente atención y servicio. El personal es muy amable y
+                            profesional. Me acompañaron durante todo el proceso migratorio con claridad."</p>
+                        <h4 class="testimonial-author">- Claudio Paim</h4>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Excelente servicio, en 3 meses tuve mi residencia solucionada. Muy
+                            contenta con la eficacia de este despacho en la fecha indicada."</p>
+                        <h4 class="testimonial-author">- Silvana Freita revollo</h4>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"Me acompañaron en el proceso de residencia por trabajo y ya recibí
+                            la aprobación. Todo el trámite se realizó sin problemas, excelente."</p>
+                        <h4 class="testimonial-author">- Miguel E. Rodriguez Posada</h4>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="testimonial-card glass-panel">
+                        <div class="stars" style="align-items: center;"><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                                class="ri-star-fill"></i>
+                            <span
+                                style="font-size: 0.8rem; color: var(--text-dim); margin-left: 5px; font-family: var(--font-ui);">(vía
+                                Google)</span>
+                            <img src="./multimedia/google-logo.png" alt="Google" loading="lazy"
+                                style="height: 16px; margin-left: 4px; padding-bottom: 2px;">
+                        </div>
+                        <p class="testimonial-text">"¡Muy buena atención! Me ayudaron con todas las dudas y me
+                            acompañaron en todo el proceso para tener mis papeles. 100% recomendable."</p>
+                        <h4 class="testimonial-author">- Emiliano Parandelli</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerta Regularización Masiva -->
+        <section class="reg-masiva-alert reveal-up">
+            <div class="grid-pattern" style="opacity: 0.15;"></div>
+            <div class="container reg-masiva-flex">
+                <div class="reg-masiva-content">
+                    <div class="reg-badge">
+                        <span class="pulse-dot"></span>
+                        A PARTIR DEL 1 DE ABRIL DE 2026
+                    </div>
+                    <h2 class="reg-title">
+                        <span class="italic-gold">Regularización Masiva</span> Extraordinaria 2026
+                    </h2>
+                    <p class="reg-desc">
+                        ¿Llevas 5 meses o más en España? Nueva vía extraordinaria para obtener tu permiso de residencia
+                        y trabajo. Nuestro equipo experto gestiona tu expediente.
+                    </p>
+                </div>
+                <div class="reg-masiva-action">
+                    <a href="regularizacion-masiva.html" target="_blank" class="reg-btn-info">
+                        <i class="ri-information-line"></i> ¿Qué es esto? Quiero saber más
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Immersive Globe -->
+        <section class="global-reach reveal-up">
+            <div class="grid-pattern"></div>
+            <div class="container global-reach-flex">
+                <div class="global-reach-text">
+                    <h2 id="presencia-title" class="text-type"><span id="presencia-text"
+                            class="text-type__content">Presencia Internacional.</span><span id="presencia-cursor"
+                            class="text-type__cursor">_</span></h2>
+                    <p>Tramitamos expedientes en todo el mundo. Alcance global con un asesoramiento íntegro y presencial
+                        desde nuestro despacho en Madrid.</p>
+                </div>
+                <div class="globe-container" id="globe-container">
+                    <!-- Curved flags text — behind the canvas/sphere -->
+                    <div class="globe-curved-wrapper" aria-hidden="true">
+                        <svg class="globe-curved-svg" viewBox="0 0 1440 200" overflow="visible">
+                            <text id="measure-text" xml:space="preserve"
+                                style="visibility:hidden;opacity:0;pointer-events:none;"></text>
+                            <defs>
+                                <path id="curve-path" d="M0,20 Q720,340 1440,180" fill="none" stroke="transparent" />
+                            </defs>
+                            <text font-weight="bold" xml:space="preserve" class="globe-curved-text">
+                                <textPath id="text-path" href="#curve-path" startOffset="0px" xml:space="preserve"></textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <!-- Canvas is on top: sphere covers text that passes "behind" it -->
+                    <canvas id="globe-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <script type="module">
+            import createGlobe from 'https://esm.sh/cobe';
+
+            const canvas = document.getElementById('globe-canvas');
+            let width = 0;
+
+            let pointerInteracting = null;
+            let pointerInteractionMovement = 0;
+            const MOVEMENT_DAMPING = 1400;
+
+            let phi = 0;
+            let r = 0;
+            let rs = 0;
+            let velocity = 0;
+
+            const onResize = () => {
+                const container = document.getElementById('globe-container');
+                if (container && canvas) {
+                    width = container.offsetWidth;
+                }
+            };
+            window.addEventListener('resize', onResize);
+            onResize();
+
+            // Ajustar DPR y muestras según capacidad del dispositivo
+            const isMobile = window.innerWidth <= 768;
+            const isLowEnd = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+            const dpr = (isMobile || isLowEnd) ? 1 : Math.min(window.devicePixelRatio, 2);
+            const samples = (isMobile || isLowEnd) ? 8000 : 16000;
+
+            const config = {
+                width: width * 2,
+                height: width * 2,
+                devicePixelRatio: dpr,
+                phi: 0,
+                theta: 0.3,
+                dark: 0,
+                diffuse: 1.2,
+                mapSamples: samples,
+                mapBrightness: 1.2,
+                baseColor: [0.72, 0.72, 0.75],
+                markerColor: [212 / 255, 175 / 255, 55 / 255],
+                glowColor: [0.82, 0.82, 0.85],
+                markers: [
+                    { location: [14.5995, 120.9842], size: 0.03 },
+                    { location: [19.076, 72.8777], size: 0.1 },
+                    { location: [23.8103, 90.4125], size: 0.05 },
+                    { location: [30.0444, 31.2357], size: 0.07 },
+                    { location: [39.9042, 116.4074], size: 0.08 },
+                    { location: [-23.5505, -46.6333], size: 0.1 },
+                    { location: [19.4326, -99.1332], size: 0.1 },
+                    { location: [40.7128, -74.006], size: 0.1 },
+                    { location: [34.6937, 135.5022], size: 0.05 },
+                    { location: [41.0082, 28.9784], size: 0.06 },
+                    { location: [40.4168, -3.7038], size: 0.15 },
+                    { location: [4.6097, -74.0817], size: 0.07 },
+                    { location: [-34.6037, -58.3816], size: 0.07 },
+                    { location: [-12.0464, -77.0428], size: 0.06 },
+                ],
+                onRender: (state) => {
+                    const stiffness = 0.04;
+                    const damping = 0.8;
+                    const force = (r - rs) * stiffness;
+                    velocity = (velocity + force) * damping;
+                    rs += velocity;
+
+                    if (pointerInteracting === null) {
+                        phi += 0.005;
+                    }
+
+                    state.phi = phi + rs;
+                    state.width = width * 2;
+                    state.height = width * 2;
+                }
+            };
+
+            // Solo inicializar el globo cuando la sección sea visible
+            let globe = null;
+            const globeSection = document.querySelector('.global-reach');
+            const globeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !globe) {
+                        globe = createGlobe(canvas, config);
+                        globeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '200px' });
+            if (globeSection) globeObserver.observe(globeSection);
+
+            if (canvas) {
+                canvas.addEventListener('pointerdown', (e) => {
+                    pointerInteracting = e.clientX;
+                });
+                canvas.addEventListener('mousemove', (e) => {
+                    if (pointerInteracting !== null) {
+                        const delta = e.clientX - pointerInteracting;
+                        pointerInteractionMovement = delta;
+                        r = r + delta / MOVEMENT_DAMPING;
+                    }
+                });
+                canvas.addEventListener('touchmove', (e) => {
+                    if (e.touches[0] && pointerInteracting !== null) {
+                        const delta = e.touches[0].clientX - pointerInteracting;
+                        pointerInteractionMovement = delta;
+                        r = r + delta / MOVEMENT_DAMPING;
+                    }
+                }, { passive: true });
+                canvas.addEventListener('pointerout', () => { pointerInteracting = null; });
+            }
+            document.addEventListener('pointerup', () => { pointerInteracting = null; });
+        </script>
+
+
+        <!-- Bienvenida / Sobre el Despacho -->
+        <section id="despacho" class="bienvenida reveal-up">
+            <div class="container bienvenida-inner">
+                <div class="bienvenida-content">
+                    <div class="bienvenida-text-col">
+                        <div class="bienvenida-badge">
+                            <i class="ri-scales-3-line"></i>
+                            <span>Especialistas en Extranjería</span>
+                        </div>
+                        <h2 class="bienvenida-title">Su despacho de <em class="italic-gold">Extranjería</em> en Madrid</h2>
+                        <p class="bienvenida-text">
+                            González & Pulido Abogados es un despacho de referencia en <strong>Derecho de Extranjería</strong> y
+                            <strong>nacionalidad española</strong>. Ofrecemos asesoramiento personalizado y de alta calidad jurídica,
+                            respaldados por cientos de clientes satisfechos.
+                        </p>
+                        <div class="bienvenida-services">
+                            <div class="bienvenida-service-item" data-delay="0">
+                                <i class="ri-passport-line"></i>
+                                <span>Permisos de residencia</span>
+                            </div>
+                            <div class="bienvenida-service-item" data-delay="1">
+                                <i class="ri-group-line"></i>
+                                <span>Reagrupación familiar</span>
+                            </div>
+                            <div class="bienvenida-service-item" data-delay="2">
+                                <i class="ri-flight-takeoff-line"></i>
+                                <span>Visados</span>
+                            </div>
+                            <div class="bienvenida-service-item" data-delay="3">
+                                <i class="ri-flag-line"></i>
+                                <span>Nacionalidad española</span>
+                            </div>
+                            <div class="bienvenida-service-item" data-delay="4">
+                                <i class="ri-file-shield-2-line"></i>
+                                <span>Recursos de denegaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bienvenida-image-col">
+                        <div class="bienvenida-image-wrap">
+                            <img src="multimedia/IMG_7880.jpg" alt="Sala de reuniones González & Pulido Abogados" class="bienvenida-img" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestras Especialidades -->
+        <section id="especialidades" class="especialidades reveal-up">
+            <div class="container">
+                <h2 class="especialidades-title">Nuestras <em class="italic-gold">Especialidades</em></h2>
+                <!-- Curved marquee text behind cards -->
+                <div class="curved-marquee-wrapper">
+                    <svg class="curved-marquee-svg" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                        <defs>
+                            <path id="curvedMarqueePath" d="M-300,100 C0,350 300,500 720,500 C1140,500 1440,350 1740,100" fill="none"/>
+                        </defs>
+                        <text font-weight="700" xml:space="preserve" class="curved-marquee-text">
+                            <textPath id="curvedMarqueeTextPath" href="#curvedMarqueePath" startOffset="0">
+                                TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="especialidades-grid">
+
+                    <!-- Tarjeta NACIONALIDAD -->
+                    <div class="esp-card nacionalidad-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>NACIONALIDAD</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="nacionalidad-por-residencia.html"><p>Nacionalidad española por residencia.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="nacionalidad-por-opcion.html"><p>Nacionalidad española por opción.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="nacionalidad-por-presuncion.html"><p>Nacionalidad por presunción.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="nacionalidad-memoria-democratica.html"><p>Nacionalidad por ley de memoria democrática.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="agilizacion-nacionalidad.html"><p>Agilización de nacionalidad española por residencia.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="5">
+                                    <a href="jura-nacionalidad-notario.html"><p>Jura de Nacionalidad ante Notario.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta VISADOS -->
+                    <div class="esp-card visados-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>VISADOS</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="visado-estancia-estudios.html"><p>Visado de estancia por estudios.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="visado-residencia-no-lucrativa.html"><p>Visado de residencia no lucrativa.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="visado-familiar-ciudadano-ue.html"><p>Visado de familiar de ciudadano de la unión.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="visado-familiar-ciudadano-espanol.html"><p>Visado de familiar de ciudadano español.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="visado-trabajo-cuenta-ajena.html"><p>Visado de residencia y trabajo cuenta ajena.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="5">
+                                    <a href="visado-turista.html"><p>Visado de turista.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta FAMILIARES -->
+                    <div class="esp-card familiares-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>FAMILIARES</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="matrimonio-extranjeria.html"><p>Matrimonio.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="pareja-de-hecho.html"><p>Pareja de hecho.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="reagrupacion-familiar-ue.html"><p>Reagrupación familiar de ciudadano de la UE.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="familiar-ciudadano-espanol.html"><p>Familiar de ciudadano español.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="reagrupacion-familiar-extranjero.html"><p>Reagrupación familiar de extranjero.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="5">
+                                    <a href="residencia-hijo-nacido-espana.html"><p>Residencia del hijo de residente legal nacido en España.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="6">
+                                    <a href="residencia-hijo-no-nacido-espana.html"><p>Residencia del hijo de residente legal no nacido en España.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta RESIDENCIAS -->
+                    <div class="esp-card residencias-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>RESIDENCIAS</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="residencia-trabajo-cuenta-ajena.html"><p>Residencia y trabajo por cuenta ajena.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="residencia-trabajo-cuenta-propia.html"><p>Residencia y trabajo por cuenta propia.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="residencia-no-lucrativa.html"><p>Residencia no lucrativa.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="residencia-arraigo-social.html"><p>Residencia por arraigo social.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="residencia-arraigo-segunda-oportunidad.html"><p>Residencia por arraigo de segunda oportunidad.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="5">
+                                    <a href="residencia-arraigo-socioformativo.html"><p>Residencia por arraigo socioformativo.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="6">
+                                    <a href="residencia-arraigo-sociolaboral.html"><p>Residencia por arraigo sociolaboral.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="7">
+                                    <a href="residencia-altamente-cualificado.html"><p>Residencia profesional altamente cualificado.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="8">
+                                    <a href="residencia-nomada-digital.html"><p>Residencia nómada digital.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="9">
+                                    <a href="residencia-ciudadano-ue.html"><p>Residencia de ciudadano de la unión.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="10">
+                                    <a href="residencia-larga-duracion.html"><p>Residencia de larga duración.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="11">
+                                    <a href="residencia-contrataciones-origen.html"><p>Residencia por contrataciones en origen.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta MODIFICACIONES -->
+                    <div class="esp-card modificaciones-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>MODIFICACIONES</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="modificacion-estudios-a-trabajo.html"><p>De estancia por estudios a residencia y trabajo por cuenta ajena.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="modificacion-excepcionales-a-trabajo.html"><p>De residencia por circunstancias excepcionales a residencia temporal y trabajo
+                                        por cuenta ajena.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="modificacion-comunitario-a-trabajo.html"><p>Del régimen comunitario a residencia por cuenta ajena por nulidad del vínculo
+                                        matrimonial, divorcio o cancelación de pareja de hecho registrada.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="modificacion-residencia-a-trabajo-ajena.html"><p>De residencia a la situación de residencia y trabajo por cuenta ajena.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="modificacion-residencia-a-trabajo-propia.html"><p>De residencia a residencia y trabajo por cuenta propia.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta RENOVACIONES -->
+                    <div class="esp-card renovaciones-card">
+                        <div class="esp-card-header">
+                            <img src="multimedia/logo-claro.png" alt="G&P Abogados" class="esp-logo" loading="lazy">
+                            <h3>RENOVACIONES</h3>
+                        </div>
+                        <div class="esp-card-body">
+                            <div class="esp-animated-list" data-esp-list>
+                                <div class="esp-item" data-index="0">
+                                    <a href="renovacion-no-lucrativa.html"><p>Renovación de residencia no lucrativa.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="1">
+                                    <a href="renovacion-trabajo.html"><p>Renovación de residencia por trabajo cuenta ajena / propia.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="2">
+                                    <a href="renovacion-altamente-cualificado.html"><p>Renovación de residencia altamente cualificado.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="3">
+                                    <a href="renovacion-investigacion.html"><p>Renovación de residencia para investigación.</p></a>
+                                </div>
+                                <div class="esp-item" data-index="4">
+                                    <a href="renovacion-agrupacion-familiar.html"><p>Renovación de residencia por agrupación familiar.</p></a>
+                                </div>
+                            </div>
+                            <div class="esp-top-gradient"></div>
+                            <div class="esp-bottom-gradient"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Evaluation Applet -->
+        <section id="evaluacion" class="evaluation">
+            <div class="container">
+
+                <div class="eval-card reveal-up">
+
+                    <!-- Título principal -->
+                    <h2 class="funnel-main-title"
+                        style="font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 600; color: var(--text-main); line-height: 1.15; letter-spacing: -1px; margin-bottom: 0.5rem;">
+                        Realiza este diagnóstico gratuito <em style="color: #C9A84C; font-style: italic;">en menos de 1
+                            minuto</em>
+                    </h2>
+
+                    <!-- Barra de progreso -->
+                    <div class="eval-progress-inline" style="margin-bottom: 1rem;">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="applet-progress" style="width: 25%;"></div>
+                        </div>
+                        <span id="step-indicator">Paso 1 de 3</span>
+                    </div>
+
+                    <!-- Step container (no heavy panel, just content) -->
+                    <div class="applet-viewport">
+
+                        <!-- Step 1: ¿Para quién? -->
+                        <div class="applet-step active" data-step="1">
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                Antes de empezar, <span style="color: var(--text-dim);">¿para quién es el
+                                    análisis?</span></h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="yo" data-goto="2">
+                                    <i class="ri-user-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Es para mí</strong><small>Quiero conocer mis opciones
+                                            legales</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="familiar" data-goto="2">
+                                    <i class="ri-group-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Es para un familiar</strong><small>Quiero ayudar a un
+                                            familiar</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="amigo" data-goto="2">
+                                    <i class="ri-heart-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Es para un amigo/a</strong><small>Quiero ayudar a
+                                            alguien
+                                            cercano</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                            <div class="eval-trust-row">
+                                <span class="eval-badge"><i class="ri-shield-check-line"></i> 100% Confidencial</span>
+                                <span class="eval-badge"><i class="ri-time-line"></i> Solo 1 minuto</span>
+                                <span class="eval-badge"><i class="ri-medal-line"></i> Sin compromiso</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Situación actual -->
+                        <div class="applet-step" data-step="2">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="1"><i class="ri-arrow-left-line"></i>
+                                    Volver</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Cuál es la <span style="color: var(--text-dim);">situación actual?</span></h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="fuera" data-goto="3a">
+                                    <i class="ri-flight-takeoff-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Estoy fuera de España</strong><small>Quiero entrar o
+                                            tramitar desde el extranjero</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="irregular" data-goto="3b">
+                                    <i class="ri-map-pin-user-line opt-icon"></i>
+                                    <span class="opt-text"><strong>En España sin documentación
+                                            regular</strong><small>Sin
+                                            papeles o con la situación caducada</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="estudiante" data-goto="3c">
+                                    <i class="ri-graduation-cap-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Con visa o permiso de estudios</strong><small>Visa de
+                                            estudiante activa en España</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="residente" data-goto="3d">
+                                    <i class="ri-home-heart-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Residente legal o con NIE</strong><small>Con permiso
+                                            en
+                                            vigor o caducado recientemente</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3a: Fuera de España -->
+                        <div class="applet-step" data-step="3a">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="2"><i class="ri-arrow-left-line"></i>
+                                    Volver</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Cuál es tu <span style="color: var(--text-dim);">objetivo en España?</span></h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="trabajo" data-goto="4">
+                                    <i class="ri-briefcase-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Trabajar por cuenta ajena</strong><small>Empleo con
+                                            empresa española</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="autonomo" data-goto="4">
+                                    <i class="ri-store-2-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Trabajar por cuenta propia /
+                                            Autónomo</strong><small>Emprender o trabajar de forma
+                                            independiente</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="nomada" data-goto="4">
+                                    <i class="ri-global-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Nómada digital / Teletrabajo</strong><small>Trabajo
+                                            remoto para empresa extranjera</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="familiar_eu" data-goto="4">
+                                    <i class="ri-group-2-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Reunirse con familiar en España</strong><small>Tengo
+                                            pareja, padres o hijos en España</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="estudiar" data-goto="4">
+                                    <i class="ri-book-open-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Estudiar</strong><small>Universidad, idiomas u otras
+                                            formaciones</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3b: Irregular -->
+                        <div class="applet-step" data-step="3b">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="2"><i class="ri-arrow-left-line"></i>
+                                    Volver</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Cuánto tiempo llevas <span style="color: var(--text-dim);">en España?</span></h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="menos2" data-goto="4">
+                                    <i class="ri-calendar-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Menos de 2 años</strong><small>Llegué hace menos de
+                                            24
+                                            meses</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="2a3" data-goto="4">
+                                    <i class="ri-calendar-event-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Entre 2 y 3 años</strong><small>Posible arraigo
+                                            social</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="mas3" data-goto="4">
+                                    <i class="ri-history-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Más de 3 años</strong><small>Buenos candidatos para
+                                            arraigo o regularización</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                            <p class="step-note"><i class="ri-information-line"></i> ¿Tienes pareja, padres o hijos con
+                                nacionalidad española o europea? Indícalo al abogado para opciones adicionales.</p>
+                        </div>
+
+                        <!-- Step 3c: Estudiante -->
+                        <div class="applet-step" data-step="3c">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="2"><i class="ri-arrow-left-line"></i>
+                                    Volver</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Qué quieres hacer <span style="color: var(--text-dim);">después de los estudios?</span>
+                            </h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="trabajar" data-goto="4">
+                                    <i class="ri-briefcase-4-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Quedarme a trabajar</strong><small>Buscar empleo o
+                                            continuar con mi empresa</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="seguir_estudios" data-goto="4">
+                                    <i class="ri-award-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Continuar estudiando</strong><small>Máster, doctorado
+                                            u
+                                            otras formaciones</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="residencia_perm" data-goto="4">
+                                    <i class="ri-home-4-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Obtener residencia
+                                            permanente</strong><small>Establecerme
+                                            definitivamente en España</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3d: Residente legal -->
+                        <div class="applet-step" data-step="3d">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="2"><i class="ri-arrow-left-line"></i>
+                                    Volver</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Cuál es tu <span style="color: var(--text-dim);">objetivo actualmente?</span></h2>
+                            <div class="applet-options">
+                                <button class="applet-opt" data-answer="renovar" data-goto="4">
+                                    <i class="ri-refresh-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Renovar mi permiso de residencia</strong><small>Mi
+                                            permiso actual caduca o ya caducó</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="larga_duracion" data-goto="4">
+                                    <i class="ri-vip-crown-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Residencia de larga duración</strong><small>Llevo más
+                                            de
+                                            5 años como residente</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="nacionalidad" data-goto="4">
+                                    <i class="ri-passport-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Solicitar la nacionalidad española</strong><small>Por
+                                            residencia, matrimonio u opción</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                                <button class="applet-opt" data-answer="familiar_reagrup" data-goto="4">
+                                    <i class="ri-team-line opt-icon"></i>
+                                    <span class="opt-text"><strong>Reagrupar a un familiar</strong><small>Traer a mi
+                                            pareja,
+                                            hijos u otros</small></span>
+                                    <i class="ri-arrow-right-s-line opt-arrow"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Resultado -->
+                        <div class="applet-step" data-step="4">
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                Tus opciones legales <span style="color: var(--text-dim);">están listas. <span
+                                        class="result-checkmark">&#10003;</span></span></h2>
+                            <p class="hero-desc" style="margin-bottom:2rem;">Basado en tu situación, estas son las vías
+                                recomendadas por nuestros abogados:</p>
+                            <div id="result-cards" class="result-cards"></div>
+                            <div class="funnel-cta-row">
+                                <button class="btn-solid-gold" onclick="showStep('5')">Obtener asesoramiento
+                                    personalizado
+                                    <i class="ri-arrow-right-line"></i></button>
+                                <button class="btn-ghost" id="restart-funnel">Comenzar de nuevo</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Datos de contacto -->
+                        <div class="applet-step" data-step="5">
+                            <div class="funnel-nav">
+                                <button class="step-back" data-goto="4"><i class="ri-arrow-left-line"></i> Volver a
+                                    resultados</button>
+                            </div>
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                ¿Cómo podemos <span style="color: var(--text-dim);">contactarte?</span></h2>
+                            <p class="hero-desc" style="margin-bottom:2rem;"><i class="ri-lock-line"></i> Información
+                                100%
+                                confidencial. Un abogado experto revisará tu diagnóstico sin coste.</p>
+                            <form id="applet-form" class="funnel-form">
+                                <div class="form-row">
+                                    <input type="text" id="form-nombre" placeholder="Tu nombre" required>
+                                    <input type="tel" id="form-tel" placeholder="Teléfono / WhatsApp" required>
+                                </div>
+                                <input type="email" id="form-email" placeholder="Correo electrónico" required>
+                                <label class="form-check">
+                                    <input type="checkbox" id="form-rgpd" required>
+                                    <span>Acepto la <a href="#" style="color:var(--gold)">política de privacidad</a> y
+                                        el
+                                        tratamiento de mis datos.</span>
+                                </label>
+                                <div class="funnel-cta-row" style="margin-top:1.5rem;">
+                                    <button type="submit" class="btn-solid-gold">Enviar y contactar <i
+                                            class="ri-whatsapp-line"></i></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Step 6: Success -->
+                        <div class="applet-step" data-step="6">
+                            <h2 class="funnel-title"
+                                style="font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 500; color: var(--text-main); font-style: normal;">
+                                <span style="color: #C9A84C;">¡Solicitud enviada</span> con éxito!
+                            </h2>
+                            <p class="hero-desc" style="margin-bottom:2rem;">Uno de nuestros abogados expertos revisará
+                                tu
+                                caso y se pondrá en contacto contigo en breve.</p>
+                            <div class="funnel-cta-row">
+                                <a href="https://wa.me/34629030475" class="btn-solid-gold" target="_blank"><i
+                                        class="ri-whatsapp-line"></i> Hablar por WhatsApp ahora</a>
+                                <button class="btn-ghost" id="restart-funnel-final">Nuevo análisis</button>
+                            </div>
+                        </div>
+
+                    </div><!-- /.applet-viewport -->
+                </div><!-- /.eval-card -->
+            </div><!-- /.container -->
+        </section>
+
+        <!-- Location / Donde Estamos -->
+        <section id="ubicacion" class="location">
+            <div class="container">
+                <div class="section-heading reveal-up text-center">
+                    <span class="sub-heading">DONDE ESTAMOS</span>
+                    <h2>Nuestras Oficinas.</h2>
+                </div>
+                <div class="location-grid reveal-up">
+                    <div class="location-info">
+                        <h3>González Pulido Abogados</h3>
+
+                        <div class="location-detail">
+                            <div class="detail-icon"><i class="ri-map-pin-line"></i></div>
+                            <div class="detail-text">
+                                <span class="detail-label">Dirección</span>
+                                <span class="detail-value">Calle del Dr. Fleming, 3, 8º<br>Chamartín, 28036
+                                    Madrid</span>
+                            </div>
+                        </div>
+
+                        <div class="location-detail">
+                            <div class="detail-icon"><i class="ri-phone-line"></i></div>
+                            <div class="detail-text">
+                                <span class="detail-label">Teléfono</span>
+                                <span class="detail-value"><a href="tel:+34629030475">+34 629 03 04 75</a></span>
+                            </div>
+                        </div>
+
+                        <div class="location-detail">
+                            <div class="detail-icon"><i class="ri-mail-send-line"></i></div>
+                            <div class="detail-text">
+                                <span class="detail-label">Email</span>
+                                <span class="detail-value"><a
+                                        href="mailto:info@gonzalezpulidoabogados.es">info@gonzalezpulidoabogados.es</a></span>
+                            </div>
+                        </div>
+
+                        <div class="location-detail">
+                            <div class="detail-icon"><i class="ri-time-line"></i></div>
+                            <div class="detail-text">
+                                <span class="detail-label">Horario</span>
+                                <span class="detail-value">Lun – Vie: 9:00 – 20:00</span>
+                            </div>
+                        </div>
+
+                        <div class="location-cta">
+                            <a href="https://www.google.es/maps/place/Gonz%C3%A1lez+Pulido+Abogados+%C2%B7+Abogados+de+extranjer%C3%ADa+Madrid/@40.4550073,-3.692006,17z/data=!3m1!4b1!4m6!3m5!1s0xd42298961d4c6b1:0xb538e51cdd6ff08c!8m2!3d40.4550073!4d-3.6894311!16s%2Fg%2F11js8kp1bq?entry=ttu&g_ep=EgoyMDI2MDMwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-solid-gold"
+                                style="width: fit-content;">
+                                Cómo llegar <i class="ri-external-link-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="location-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.0028206109315!2d-3.6896263!3d40.4578166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228e333d420f1%3A0x6b3b2ce2a87071eb!2sGonz%C3%A1lez%20Pulido%20Abogados%20%C2%B7%20Abogados%20de%20extranjer%C3%ADa%20Madrid!5e0!3m2!1sen!2ses!4v1709569734123!5m2!1sen!2ses"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="reveal-up" style="display: flex; justify-content: center; align-items: center; margin-top: 4rem; width: 100%;">
+                    <!-- Instagram Follow -->
+                    <a href="https://www.instagram.com/gonzalez_pulido_abogados?igsh=MTN4NmhseDhiOTB6ag==" target="_blank" class="instagram-follow-inline" style="display: flex; align-items: center; justify-content: center; gap: 1.2rem; text-decoration: none; color: var(--text-main); transition: color 0.3s ease, transform 0.3s ease; text-align: center;">
+                        <i class="ri-instagram-line" style="font-size: 3.5rem; color: var(--gold);"></i>
+                        <span style="font-family: var(--font-ui); font-weight: 600; font-size: 1.6rem;">¡Síguenos en Instagram!</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer style="background:#3d5265; border-top:1px solid rgba(255,255,255,0.1); padding:60px 0 32px;">
+        <div class="container">
+            <div class="footer-grid"
+                style="gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.1);">
+
+                <!-- Brand col -->
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <a href="#">
+                        <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Abogados"
+                            style="height:52px; width:auto; filter: brightness(0) invert(1);" loading="lazy">
+                    </a>
+                    <p
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; line-height:1.7; max-width:280px; font-family:var(--font-ui);">
+                        Despacho especializado en Derecho de Extranjería y Nacionalidad Española.
+                    </p>
+                    <div style="display:flex; gap:12px;">
+                        <a href="https://wa.me/34629030475"
+                            style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.7); font-size:1rem; text-decoration:none; transition:all 0.2s;"
+                            onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C';this.style.background='rgba(212,175,55,0.1)'"
+                            onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.7)';this.style.background='transparent'"><i
+                                class="ri-whatsapp-line"></i></a>
+                        <a href="mailto:info@gonzalezpulidoabogados.es"
+                            style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.7); font-size:1rem; text-decoration:none; transition:all 0.2s;"
+                            onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C';this.style.background='rgba(212,175,55,0.1)'"
+                            onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.7)';this.style.background='transparent'"><i
+                                class="ri-mail-line"></i></a>
+                        <a href="https://www.google.es/maps/place/Gonz%C3%A1lez+Pulido+Abogados+%C2%B7+Abogados+de+extranjer%C3%ADa+Madrid/@40.4550073,-3.692006,17z/data=!3m1!4b1!4m6!3m5!1s0xd42298961d4c6b1:0xb538e51cdd6ff08c!8m2!3d40.4550073!4d-3.6894311!16s%2Fg%2F11js8kp1bq?entry=ttu&g_ep=EgoyMDI2MDMwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+                            style="display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.7); font-size:1rem; text-decoration:none; transition:all 0.2s;"
+                            onmouseover="this.style.borderColor='#C9A84C';this.style.color='#C9A84C';this.style.background='rgba(212,175,55,0.1)'"
+                            onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.7)';this.style.background='transparent'"><i
+                                class="ri-map-pin-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Nav col -->
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                    <h5
+                        style="color:#ffffff; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-family:var(--font-ui); margin-bottom:6px;">
+                        Navegación</h5>
+                    <a href="#servicios"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Especialidades</a>
+                    <a href="#despacho"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">El Despacho</a>
+                    <a href="#testimonios"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Casos Reales</a>
+                    <a href="#ubicacion"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Ubicación</a>
+                    <a href="#evaluacion"
+                        style="color:#C9A84C; font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:opacity 0.2s;"
+                        onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">Estudio Gratuito
+                        →</a>
+                </div>
+
+                <!-- Services col -->
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                    <h5
+                        style="color:#ffffff; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-family:var(--font-ui); margin-bottom:6px;">
+                        Servicios</h5>
+                    <a href="#"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Nacionalidad</a>
+                    <a href="#"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Arraigos</a>
+                    <a href="#"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Visados</a>
+                    <a href="#"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Familiares</a>
+                    <a href="#"
+                        style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                        onmouseover="this.style.color='#C9A84C'"
+                        onmouseout="this.style.color='rgba(255,255,255,0.7)'">Residencias</a>
+                </div>
+
+                <!-- Contact col -->
+                <div style="display:flex; flex-direction:column; gap:16px;">
+                    <h5
+                        style="color:#ffffff; font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; font-family:var(--font-ui); margin-bottom:6px;">
+                        Contacto</h5>
+                    <div style="display:flex; align-items:flex-start; gap:10px;">
+                        <i class="ri-map-pin-line" style="color:#C9A84C; margin-top:2px; flex-shrink:0;"></i>
+                        <span
+                            style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); line-height:1.6;">C.
+                            del Dr. Fleming, 3, 8º<br>Chamartín, 28036 Madrid</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="ri-phone-line" style="color:#C9A84C; flex-shrink:0;"></i>
+                        <a href="tel:+34629030475"
+                            style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                            onmouseover="this.style.color='#ffffff'"
+                            onmouseout="this.style.color='rgba(255,255,255,0.7)'">+34 629 03 04 75</a>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="ri-mail-line" style="color:#C9A84C; flex-shrink:0;"></i>
+                        <a href="mailto:info@gonzalezpulidoabogados.es"
+                            style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui); text-decoration:none; transition:color 0.2s;"
+                            onmouseover="this.style.color='#ffffff'"
+                            onmouseout="this.style.color='rgba(255,255,255,0.7)'">info@gonzalezpulidoabogados.es</a>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="ri-time-line" style="color:#C9A84C; flex-shrink:0;"></i>
+                        <span style="color:rgba(255,255,255,0.7); font-size:0.85rem; font-family:var(--font-ui);">Lun –
+                            Vie: 9:00 – 20:00</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div style="display:flex; align-items:center; justify-content:center; padding-top:28px;">
+                <p style="color:rgba(255,255,255,0.6); font-size:0.8rem; font-family:var(--font-ui);">&copy; 2026
+                    González & Pulido Abogados. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp -->
+    <a href="https://wa.me/34629030475" class="float-wa" aria-label="WhatsApp">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+
+    <!-- Script -->
+    <script src="./script.js?v=11"></script>
+
+    <script>
+        function toggleLlamanosMenu(e) {
+            e.stopPropagation();
+            const wrap = e.currentTarget.closest('.btn-llamanos-wrap');
+            wrap.classList.toggle('open');
+        }
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.btn-llamanos-wrap.open').forEach(function (el) {
+                el.classList.remove('open');
+            });
+        });
+    </script>
+
+    <!-- Curved Marquee Animation -->
+    <script>
+        (function() {
+            const textPath = document.getElementById('curvedMarqueeTextPath');
+            if (!textPath) return;
+            // Measure one repetition length dynamically
+            const singleUnit = 'TUS ✦ ABOGADOS ✦ DE ✦ CONFIANZA ✦ ';
+            const fullText = textPath.textContent || '';
+            const repeatCount = Math.round(fullText.length / singleUnit.length);
+            // Wait for font to render, then measure
+            requestAnimationFrame(function() {
+                const totalLen = textPath.getComputedTextLength();
+                const unitLen = totalLen / repeatCount;
+                let offset = 0;
+                const speed = 1.5;
+                function animate() {
+                    offset -= speed;
+                    if (offset < -unitLen) offset += unitLen;
+                    textPath.setAttribute('startOffset', offset + 'px');
+                    requestAnimationFrame(animate);
+                }
+                requestAnimationFrame(animate);
+            });
+        })();
+    </script>
+
+    <!-- Bienvenida staggered animation -->
+    <script>
+        (() => {
+            const items = document.querySelectorAll('.bienvenida-service-item');
+            if (!items.length) return;
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        items.forEach((item, i) => {
+                            setTimeout(() => item.classList.add('visible'), i * 120);
+                        });
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            obs.observe(document.querySelector('.bienvenida-services'));
+        })();
+    </script>
+</body>
+
+</html>

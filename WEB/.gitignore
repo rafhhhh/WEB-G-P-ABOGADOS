@@ -1,0 +1,9 @@
+node_modules/
+venv/
+.env
+.DS_Store
+*.docx
+*.pdf
+# Temporary files
+/tmp/
+.claude/

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencia Nómada Digital | González & Pulido Abogados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css?v=3">
+    <style>
+        .inner-page-hero {
+            padding: 10rem 0 5rem;
+            position: relative;
+            background: linear-gradient(135deg, rgba(61,82,101,0.06) 0%, rgba(212,175,55,0.06) 100%);
+            text-align: center;
+        }
+        .inner-page-title {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            line-height: 1.15;
+        }
+        .breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .95rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .tramite-content {
+            padding: 0 0 6rem;
+        }
+        .tramite-card {
+            background: #FFF;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 3.5rem 4rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+        .tramite-section {
+            margin-bottom: 3rem;
+        }
+        .tramite-section:last-child { margin-bottom: 0; }
+        .tramite-section-title {
+            font-size: 1.6rem;
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+        .tramite-section-title i {
+            color: var(--gold);
+            font-size: 1.4rem;
+        }
+        .tramite-text {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+        .req-list, .doc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .req-list li, .doc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            padding: 1rem 1.25rem;
+            background: rgba(212,175,55,0.03);
+            border: 1px solid rgba(212,175,55,0.1);
+            border-radius: 10px;
+            margin-bottom: .75rem;
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+        .req-list li:hover, .doc-list li:hover {
+            background: rgba(212,175,55,0.08);
+            border-color: var(--gold);
+            transform: translateX(4px);
+        }
+        .req-list li i, .doc-list li i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .step-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.75rem;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+        .step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: .15rem;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .step-text p {
+            color: var(--text-dim);
+            font-size: .95rem;
+            line-height: 1.5;
+        }
+        .plazo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+        .plazo-badge i { color: var(--gold); font-size: 1.3rem; }
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 2.5rem 0;
+        }
+        @media (max-width: 768px) {
+            .inner-page-title { font-size: 2.2rem; }
+            .tramite-card { padding: 2rem 1.5rem; }
+            .tramite-section-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header reveal-down">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Logo" class="brand-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="#despacho" class="nav-item">El Despacho</a>
+                <a href="index.html#ubicacion" class="nav-item">Ubicación</a>
+                <div class="nav-dropdown-container">
+                    <a href="#" class="nav-item">Otras Especialidades <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="divorcios.html" class="nav-dropdown-item">Divorcios</a>
+                        <a href="derecho-bancario.html" class="nav-dropdown-item">Derecho Bancario</a>
+                        <a href="accidentes-trafico.html" class="nav-dropdown-item">Accidentes de Tráfico</a>
+                        <a href="derecho-penal.html" class="nav-dropdown-item">Derecho Penal</a>
+                        <a href="gestion-inmobiliaria.html" class="nav-dropdown-item">Gestión Inmobiliaria</a>
+                        <a href="herencias.html" class="nav-dropdown-item">Herencias</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-actions">
+                <div class="btn-llamanos-wrap">
+                    <button class="btn-ghost btn-llamanos" onclick="toggleLlamanosMenu(event)">
+                        <i class="ri-phone-line"></i> Llámanos <i class="ri-arrow-down-s-line llamanos-chevron"></i>
+                    </button>
+                    <div class="llamanos-dropdown" id="llamanos-dropdown">
+                        <a href="tel:+34629030475" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 629 030 475
+                        </a>
+                        <a href="tel:+34669129258" class="llamanos-item">
+                            <i class="ri-phone-fill"></i> 669 129 258
+                        </a>
+                    </div>
+                </div>
+                <a href="https://wa.me/34629030475" class="btn-ghost btn-sm">
+                    <i class="ri-whatsapp-line"></i> Contacto Rápido
+                </a>
+                <a href="index.html#evaluacion" class="btn-glow btn-sm">
+                    Estudio Gratuito
+                </a>
+            </div>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+                <i class="ri-menu-3-line"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="inner-page-hero">
+            <div class="container reveal-up">
+                <div class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <a href="index.html#especialidades">Residencias</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span>Residencia Nómada Digital</span>
+                </div>
+                <h1 class="inner-page-title">Residencia Nómada Digital</h1>
+                <p class="tagline">Trabaja en remoto desde España. La nueva autorización para profesionales que teletrabajan para empresas extranjeras.</p>
+            </div>
+        </section>
+
+        <section class="tramite-content">
+            <div class="container reveal-up">
+                <div class="tramite-card">
+
+                    <div class="tramite-section">
+                        <h2 class="tramite-section-title"><i class="ri-question-line"></i> ¿Qué es?</h2>
+                        <p class="tramite-text">Introducida por la Ley de Startups (Ley 28/2022), esta autorización permite a trabajadores por cuenta ajena o autónomos de empresas extranjeras residir en España mientras teletrabajan. Es ideal para profesionales digitales que quieren disfrutar de la calidad de vida española sin perder su empleo internacional.</p>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="tramite-section">
+                        <h2 class="tramite-section-title"><i class="ri-user-line"></i> ¿Quién puede solicitarlo?</h2>
+                        <ul class="req-list">
+                            <li><i class="ri-checkbox-circle-line"></i> Profesionales que realicen una actividad laboral o profesional a distancia para empresas situadas fuera de España</li>
+<li><i class="ri-checkbox-circle-line"></i> Que puedan acreditar una relación laboral o profesional de al menos 1 año con la empresa extranjera, o que la empresa tenga al menos 1 año de antigüedad</li>
+<li><i class="ri-checkbox-circle-line"></i> Que acrediten una titulación universitaria o de formación profesional de escuelas de prestigio</li>
+
+                        </ul>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="tramite-section">
+                        <h2 class="tramite-section-title"><i class="ri-folder-line"></i> Documentación necesaria</h2>
+                        <ul class="doc-list">
+                            <li><i class="ri-file-text-line"></i> Pasaporte en vigor</li>
+<li><i class="ri-file-text-line"></i> Contrato de trabajo o certificación de la relación profesional con la empresa extranjera</li>
+<li><i class="ri-file-text-line"></i> Acreditación de la antigüedad de la empresa (al menos 1 año) o de la relación laboral (al menos 1 año)</li>
+<li><i class="ri-file-text-line"></i> Titulación universitaria o de formación profesional</li>
+<li><i class="ri-file-text-line"></i> Certificado de antecedentes penales</li>
+<li><i class="ri-file-text-line"></i> Seguro médico público o privado</li>
+
+                        </ul>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="tramite-section">
+                        <h2 class="tramite-section-title"><i class="ri-route-line"></i> ¿Cómo funciona el proceso?</h2>
+                        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-text"><h4>Verificar requisitos</h4><p>Comprobar que cumples los requisitos de relación laboral con empresa extranjera.</p></div>
+        </div>
+<div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-text"><h4>Solicitar visado o autorización</h4><p>Si estás fuera de España, solicitar visado; si ya estás en España legalmente, solicitar la autorización directamente.</p></div>
+        </div>
+<div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-text"><h4>Resolución</h4><p>La UGE-CE resuelve en un plazo de 20 días hábiles.</p></div>
+        </div>
+<div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-text"><h4>Obtener TIE</h4><p>Tramitar la tarjeta de residencia con validez de hasta 3 años.</p></div>
+        </div>
+
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="tramite-section">
+                        <h2 class="tramite-section-title"><i class="ri-time-line"></i> ¿Cuánto tarda?</h2>
+                        <div class="plazo-badge">
+                            <i class="ri-calendar-check-line"></i>
+                            De 20 días hábiles a 3 meses
+                        </div>
+                    </div>
+
+                    <div style="text-align:center; margin-top:3.5rem;">
+                        <a href="index.html#evaluacion" class="btn-solid-gold" style="font-size:1.1rem; padding:1.2rem 2.5rem;">
+                            Estudiamos tu caso gratis <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- Fixed WhatsApp -->
+    <a href="https://wa.me/34629030475" class="float-wa" aria-label="WhatsApp">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+    <script src="./script.js"></script>
+    <script>
+        function toggleLlamanosMenu(e) { e.stopPropagation(); const wrap = e.currentTarget.closest('.btn-llamanos-wrap'); wrap.classList.toggle('open'); }
+        document.addEventListener('click', function () { document.querySelectorAll('.btn-llamanos-wrap.open').forEach(function (el) { el.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

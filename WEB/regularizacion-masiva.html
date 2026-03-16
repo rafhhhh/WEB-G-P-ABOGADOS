@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regularización Masiva 2026 – Tu guía paso a paso | González & Pulido Abogados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css?v=3">
+    <style>
+        /* ── Hero ── */
+        .rm-hero {
+            padding: 10rem 0 6rem;
+            background: linear-gradient(135deg, #0d1821 0%, #1e2f3f 50%, #3d5265 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .rm-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,175,55,0.12) 0%, transparent 70%);
+        }
+        .rm-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212,175,55,0.12);
+            border: 1px solid rgba(212,175,55,0.4);
+            padding: 0.45rem 1.2rem;
+            border-radius: 99px;
+            color: #D4AF37;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.8rem;
+        }
+        .rm-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            color: #fff;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            position: relative;
+        }
+        .rm-hero-title .gold { color: #D4AF37; font-style: italic; }
+        .rm-hero-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.75);
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+        .rm-hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .rm-hero-ctas .btn-solid-gold { font-size: 1.05rem; padding: 1rem 2.2rem; }
+        .btn-wa-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: #fff;
+            font-family: var(--font-ui);
+            font-weight: 600;
+            font-size: 1.05rem;
+            padding: 1rem 2.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: filter 0.2s;
+        }
+        .btn-wa-hero:hover { filter: brightness(1.1); }
+
+        /* ── Countdown ── */
+        .rm-countdown-wrap {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 16px;
+            padding: 1.8rem 2.5rem;
+            margin-top: 3rem;
+            display: inline-block;
+        }
+        .rm-countdown-label {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        .rm-countdown {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .rm-countdown-unit {
+            text-align: center;
+            min-width: 70px;
+        }
+        .rm-countdown-num {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #D4AF37;
+            line-height: 1;
+        }
+        .rm-countdown-unit span:last-child {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+        }
+
+        /* ── Sections shared ── */
+        .rm-section {
+            padding: 6rem 0;
+        }
+        .rm-section-alt {
+            background: rgba(61,82,101,0.04);
+        }
+        .rm-section-dark {
+            background: linear-gradient(135deg, #0d1821, #1e2f3f);
+            color: #fff;
+        }
+        .rm-section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            margin-bottom: 0.8rem;
+            color: var(--text-main);
+        }
+        .rm-section-dark .rm-section-title { color: #fff; }
+        .rm-section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 3.5rem;
+        }
+        .rm-section-dark .rm-section-subtitle { color: rgba(255,255,255,0.65); }
+        .rm-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #D4AF37;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ── Who benefits ── */
+        .rm-who-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .rm-who-card {
+            background: #fff;
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.06);
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+        .rm-who-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(212,175,55,0.18);
+            border-color: #D4AF37;
+        }
+        .rm-who-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            font-size: 1.8rem;
+            color: #D4AF37;
+        }
+        .rm-who-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+        }
+        .rm-who-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* ── Requirements ── */
+        .rm-req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+        }
+        .rm-req-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
+            background: #fff;
+            border-left: 4px solid #D4AF37;
+            padding: 1.8rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .rm-req-num {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #D4AF37;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .rm-req-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+        .rm-req-item p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ── Documents checklist ── */
+        .rm-docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .rm-doc-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background: #fff;
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 12px;
+            padding: 1.3rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .rm-doc-item.checked {
+            background: rgba(212,175,55,0.07);
+            border-color: #D4AF37;
+        }
+        .rm-doc-check {
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            border: 2px solid rgba(212,175,55,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            transition: background 0.2s, border-color 0.2s;
+            font-size: 1rem;
+            color: transparent;
+        }
+        .rm-doc-item.checked .rm-doc-check {
+            background: #D4AF37;
+            border-color: #D4AF37;
+            color: #fff;
+        }
+        .rm-doc-text strong {
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: var(--text-main);
+        }
+        .rm-doc-text span {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+        .rm-doc-optional {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: rgba(212,175,55,0.12);
+            color: #B8941F;
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.4rem;
+        }
+        .rm-docs-hint {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ── Steps ── */
+        .rm-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+        .rm-steps::before {
+            content: '';
+            position: absolute;
+            left: 23px;
+            top: 24px;
+            bottom: 24px;
+            width: 2px;
+            background: linear-gradient(to bottom, #D4AF37, rgba(212,175,55,0.1));
+        }
+        .rm-step {
+            display: flex;
+            gap: 1.8rem;
+            align-items: flex-start;
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        .rm-step-num {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #D4AF37;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(212,175,55,0.4);
+        }
+        .rm-step-body h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        .rm-step-body p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+
+        /* ── Permits ── */
+        .rm-permit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .rm-permit-card {
+            border-radius: 16px;
+            padding: 2.5rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(212,175,55,0.2);
+            text-align: center;
+        }
+        .rm-permit-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+        .rm-permit-card h3 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .rm-permit-duration {
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin: 0.5rem 0;
+        }
+        .rm-permit-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.6;
+        }
+
+        /* ── FAQ ── */
+        .rm-faq { display: flex; flex-direction: column; gap: 0.75rem; }
+        .rm-faq-item {
+            border: 1px solid rgba(212,175,55,0.18);
+            border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .rm-faq-item.open { box-shadow: 0 6px 25px rgba(212,175,55,0.15); }
+        .rm-faq-q {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.5rem 1.8rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            color: var(--text-main);
+            user-select: none;
+        }
+        .rm-faq-q i {
+            color: #D4AF37;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: transform 0.25s;
+        }
+        .rm-faq-item.open .rm-faq-q i { transform: rotate(45deg); }
+        .rm-faq-a {
+            display: none;
+            padding: 0 1.8rem 1.5rem;
+            font-size: 0.97rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+        .rm-faq-item.open .rm-faq-a { display: block; }
+
+        /* ── CTA Final ── */
+        .rm-cta-final {
+            text-align: center;
+            padding: 7rem 0;
+            background: linear-gradient(135deg, #0d1821, #3d5265);
+            position: relative;
+            overflow: hidden;
+        }
+        .rm-cta-final::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(212,175,55,0.15), transparent 70%);
+        }
+        .rm-cta-final h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            color: #fff;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .rm-cta-final p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+        }
+        .rm-cta-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .rm-cta-btns .btn-solid-gold { font-size: 1.1rem; padding: 1.1rem 2.5rem; }
+
+        /* ── Dates banner ── */
+        .rm-dates-banner {
+            background: rgba(212,175,55,0.08);
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 16px;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1.8rem 2rem;
+            margin-bottom: 3rem;
+        }
+        .rm-date-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.8rem 1.5rem;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid rgba(212,175,55,0.2);
+            min-width: 160px;
+        }
+        .rm-date-pill strong {
+            font-size: 1rem;
+            color: #D4AF37;
+            font-family: 'Playfair Display', serif;
+        }
+        .rm-date-pill span {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .rm-hero { padding: 8rem 0 5rem; }
+            .rm-steps::before { left: 19px; }
+            .rm-countdown { gap: 1rem; }
+            .rm-countdown-num { font-size: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .rm-permit-duration { font-size: 2.2rem; }
+        }
+        /* ── Doc Popup ── */
+        #doc-popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: dpFadeIn 0.3s ease;
+        }
+        #doc-popup-overlay.visible {
+            display: flex;
+        }
+        @keyframes dpFadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        #doc-popup {
+            background: var(--surface, #fff);
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 16px;
+            padding: 2.2rem 2.4rem;
+            max-width: 420px;
+            width: calc(100% - 2rem);
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            animation: dpSlideUp 0.35s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes dpSlideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to   { transform: translateY(0);    opacity: 1; }
+        }
+        #doc-popup-close {
+            position: absolute;
+            top: 0.9rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-dim, #888);
+            line-height: 1;
+        }
+        .doc-popup-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(212,175,55,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #D4AF37;
+        }
+        #doc-popup h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin: 0 0 0.6rem;
+            color: var(--text-main, #1a1a1a);
+        }
+        #doc-popup p {
+            font-size: 0.9rem;
+            color: var(--text-dim, #666);
+            line-height: 1.6;
+            margin: 0 0 1.4rem;
+        }
+        .doc-popup-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .doc-popup-btns a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .doc-popup-btns a:hover { opacity: 0.85; }
+        .doc-popup-btn-wa {
+            background: #25D366;
+            color: #fff;
+        }
+        .doc-popup-btn-tel {
+            background: rgba(212,175,55,0.12);
+            border: 1px solid rgba(212,175,55,0.4);
+            color: #D4AF37;
+        }
+        .doc-popup-dismiss {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--text-dim, #888);
+            margin-top: 0.4rem;
+            text-align: center;
+            width: 100%;
+            padding: 0.3rem 0;
+        }
+        .doc-popup-dismiss:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header class="header reveal-down">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <img src="./multimedia/logo-gp-abogados-nuevo.png" alt="González & Pulido Logo" class="brand-img">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#especialidades" class="nav-item">El Despacho</a>
+                <a href="index.html#ubicacion" class="nav-item">Ubicación</a>
+                <div class="nav-dropdown-container">
+                    <a href="#" class="nav-item">Otras Especialidades <i class="ri-arrow-down-s-line"></i></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="divorcios.html" class="nav-dropdown-item">Divorcios</a>
+                        <a href="derecho-bancario.html" class="nav-dropdown-item">Derecho Bancario</a>
+                        <a href="accidentes-trafico.html" class="nav-dropdown-item">Accidentes de Tráfico</a>
+                        <a href="derecho-penal.html" class="nav-dropdown-item">Derecho Penal</a>
+                        <a href="gestion-inmobiliaria.html" class="nav-dropdown-item">Gestión Inmobiliaria</a>
+                        <a href="herencias.html" class="nav-dropdown-item">Herencias</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <div class="btn-llamanos-wrap">
+                    <button class="btn-ghost btn-llamanos" onclick="toggleLlamanosMenu(event)">
+                        <i class="ri-phone-line"></i> Llámanos <i class="ri-arrow-down-s-line llamanos-chevron"></i>
+                    </button>
+                    <div class="llamanos-dropdown" id="llamanos-dropdown">
+                        <a href="tel:+34629030475" class="llamanos-item"><i class="ri-phone-fill"></i> 629 030 475</a>
+                        <a href="tel:+34669129258" class="llamanos-item"><i class="ri-phone-fill"></i> 669 129 258</a>
+                    </div>
+                </div>
+                <a href="https://wa.me/34629030475" class="btn-ghost btn-sm"><i class="ri-whatsapp-line"></i> Contacto Rápido</a>
+                <a href="index.html#evaluacion" class="btn-glow btn-sm">Estudio Gratuito</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ════════════════════════════════════════
+             A. HERO
+        ════════════════════════════════════════ -->
+        <section class="rm-hero">
+            <div class="container reveal-up" style="position:relative; z-index:2;">
+                <div class="rm-hero-badge">
+                    <span class="pulse-dot"></span>
+                    Medida Extraordinaria · España 2026
+                </div>
+                <h1 class="rm-hero-title">
+                    Tu oportunidad de<br><span class="gold">regularizarte en España</span>
+                </h1>
+                <p class="rm-hero-subtitle">
+                    El Gobierno ha abierto una vía especial para que más de 400.000 personas
+                    que ya viven aquí puedan obtener sus papeles por primera vez.
+                    <strong style="color:#fff;">El plazo es de solo 3 meses.</strong>
+                </p>
+                <div class="rm-hero-ctas">
+                    <a href="https://wa.me/34629030475" class="btn-wa-hero">
+                        <i class="ri-whatsapp-line"></i> Hablar con un abogado
+                    </a>
+                </div>
+
+                <!-- Countdown -->
+                <div class="rm-countdown-wrap">
+                    <p class="rm-countdown-label"><i class="ri-timer-line"></i> Tiempo que queda para presentar tu solicitud</p>
+                    <div class="rm-countdown">
+                        <div class="rm-countdown-unit">
+                            <span class="rm-countdown-num" id="cd-days">--</span>
+                            <span>días</span>
+                        </div>
+                        <div class="rm-countdown-unit">
+                            <span class="rm-countdown-num" id="cd-hours">--</span>
+                            <span>horas</span>
+                        </div>
+                        <div class="rm-countdown-unit">
+                            <span class="rm-countdown-num" id="cd-mins">--</span>
+                            <span>minutos</span>
+                        </div>
+                        <div class="rm-countdown-unit">
+                            <span class="rm-countdown-num" id="cd-secs">--</span>
+                            <span>segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             B. FECHAS CLAVE
+        ════════════════════════════════════════ -->
+        <section class="rm-section">
+            <div class="container reveal-up">
+                <span class="rm-label"><i class="ri-calendar-event-line"></i> Fechas importantes</span>
+                <h2 class="rm-section-title">¿Cuándo puedo solicitarlo?</h2>
+                <p class="rm-section-subtitle">Hay fechas que no puedes perderte. Márcalas en tu calendario ahora mismo.</p>
+
+                <div class="rm-dates-banner">
+                    <div class="rm-date-pill">
+                        <strong>Antes del 31 dic 2025</strong>
+                        <span>Debes poder probar que ya estabas en España</span>
+                    </div>
+                    <div class="rm-date-pill">
+                        <strong>1 de abril 2026</strong>
+                        <span>Apertura del plazo de solicitudes</span>
+                    </div>
+                    <div class="rm-date-pill">
+                        <strong>30 de junio 2026</strong>
+                        <span>Cierre del plazo. Última oportunidad</span>
+                    </div>
+                </div>
+
+                <p style="font-size:0.95rem; color:var(--text-dim); background:rgba(212,175,55,0.07); border-left:3px solid #D4AF37; padding:1rem 1.5rem; border-radius:0 8px 8px 0; max-width:680px;">
+                    <i class="ri-error-warning-line" style="color:#D4AF37;"></i>
+                    &nbsp;Si ya estás aquí pero todavía no tienes tus documentos listos, es el momento de empezar a prepararlos para no perder el plazo.
+                </p>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             C. ¿A QUIÉN BENEFICIA?
+        ════════════════════════════════════════ -->
+        <section class="rm-section rm-section-alt">
+            <div class="container reveal-up">
+                <span class="rm-label"><i class="ri-group-line"></i> ¿Esto es para mí?</span>
+                <h2 class="rm-section-title">¿A quién le puede ayudar esta ley?</h2>
+                <p class="rm-section-subtitle">Si te identificas con alguna de estas situaciones, esta regularización puede ser tu camino.</p>
+
+                <div class="rm-who-grid">
+                    <div class="rm-who-card">
+                        <div class="rm-who-icon"><i class="ri-map-pin-user-line"></i></div>
+                        <h3>Vives aquí sin papeles</h3>
+                        <p>Llevas tiempo en España trabajando o buscando trabajo pero nunca has tenido un permiso de residencia.</p>
+                    </div>
+                    <div class="rm-who-card">
+                        <div class="rm-who-icon"><i class="ri-file-damage-line"></i></div>
+                        <h3>Tu permiso está caducado</h3>
+                        <p>Tuviste documentos en su momento pero caducaron y no has podido renovarlos o tu situación se volvió irregular.</p>
+                    </div>
+                    <div class="rm-who-card">
+                        <div class="rm-who-icon"><i class="ri-shield-cross-line"></i></div>
+                        <h3>Te denegaron el asilo</h3>
+                        <p>Pediste protección internacional, te la rechazaron, pero sigues viviendo y trabajando en España.</p>
+                    </div>
+                    <div class="rm-who-card">
+                        <div class="rm-who-icon"><i class="ri-user-heart-line"></i></div>
+                        <h3>Eres menor o joven integrado</h3>
+                        <p>Estás en el sistema educativo o de protección de menores y quieres un permiso estable para tu futuro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             D. REQUISITOS EN LENGUAJE SIMPLE
+        ════════════════════════════════════════ -->
+        <section class="rm-section">
+            <div class="container reveal-up">
+                <span class="rm-label"><i class="ri-checkbox-circle-line"></i> Condiciones</span>
+                <h2 class="rm-section-title">¿Qué necesito para poder pedirlo?</h2>
+                <p class="rm-section-subtitle">Son requisitos básicos y la mayoría de personas que ya viven aquí los cumplen.</p>
+
+                <div class="rm-req-grid">
+                    <div class="rm-req-item">
+                        <div class="rm-req-num">1</div>
+                        <h4>Estar en España antes del 31 de diciembre de 2025</h4>
+                        <p>No hace falta que lleves muchos años, pero sí tienes que poder demostrar que ya estabas aquí antes de esa fecha.</p>
+                    </div>
+                    <div class="rm-req-item">
+                        <div class="rm-req-num">2</div>
+                        <h4>Sin delitos graves</h4>
+                        <p>No tener condenas por delitos serios en España ni en tu país de origen. Infracciones menores no son problema en la mayoría de casos.</p>
+                    </div>
+                    <div class="rm-req-item">
+                        <div class="rm-req-num">3</div>
+                        <h4>No necesitas tener trabajo ya</h4>
+                        <p>No se exige un contrato previo en todos los casos. Puedes presentar una oferta de empleo, formación o simplemente demostrar que buscas trabajo.</p>
+                    </div>
+                    <div class="rm-req-item">
+                        <div class="rm-req-num">4</div>
+                        <h4>Arraigo en la comunidad</h4>
+                        <p>Se valora que tengas vínculos aquí: hijos en el colegio, tiempo viviendo en el mismo barrio, familia, participación en asociaciones, etc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             E. DOCUMENTOS CHECKLIST
+        ════════════════════════════════════════ -->
+        <section class="rm-section rm-section-alt">
+            <div class="container reveal-up">
+                <span class="rm-label"><i class="ri-folder-open-line"></i> Documentación</span>
+                <h2 class="rm-section-title">¿Qué documentos tengo que reunir?</h2>
+                <p class="rm-section-subtitle">Haz clic para marcar los que ya tienes. Te ayudamos a conseguir los que faltan.</p>
+
+                <div class="rm-docs-grid">
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Pasaporte o documento de identidad</strong>
+                            <span>De tu país de origen. Si está caducado, en muchos casos también se acepta.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Empadronamiento histórico</strong>
+                            <span>Demuestra que llevas tiempo viviendo en España. Lo pides en tu Ayuntamiento.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Justificantes de presencia en España</strong>
+                            <span>Facturas, citas médicas, certificados escolares, contratos de alquiler, extractos bancarios…</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Certificado de antecedentes penales en España</strong>
+                            <span>Se puede obtener por internet o en el Registro Central de Penados.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Certificado de antecedentes de tu país de origen</strong>
+                            <span>En algunos casos es necesario. Puede requerir traducción oficial y apostilla.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Oferta de empleo o vida laboral <span class="rm-doc-optional">Opcional</span></strong>
+                            <span>Si tienes trabajo o una oferta, ayuda a fortalecer tu solicitud.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Documentación familiar <span class="rm-doc-optional">Si tienes hijos</span></strong>
+                            <span>Certificados de nacimiento, libro de familia, certificados escolares de tus hijos.</span>
+                        </div>
+                    </div>
+                    <div class="rm-doc-item" onclick="this.classList.toggle('checked')">
+                        <div class="rm-doc-check"><i class="ri-check-line"></i></div>
+                        <div class="rm-doc-text">
+                            <strong>Cursos de formación o inscripción al SEPE <span class="rm-doc-optional">Opcional</span></strong>
+                            <span>Si estás inscrito en servicios de empleo o has hecho formación, suma a tu expediente.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="rm-docs-hint">
+                    <i class="ri-lightbulb-line" style="color:#D4AF37;"></i>
+                    Prepara un dossier con todas las copias ordenadas. Cuantos más documentos, más sólida es tu solicitud.
+                </p>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             F. PROCESO PASO A PASO
+        ════════════════════════════════════════ -->
+        <section class="rm-section rm-section-dark">
+            <div class="container reveal-up">
+                <span class="rm-label" style="color:#D4AF37;"><i class="ri-road-map-line"></i> El proceso</span>
+                <h2 class="rm-section-title">Cómo lo gestionamos contigo</h2>
+                <p class="rm-section-subtitle">Nos encargamos de todo, paso a paso. Tú no estás solo en esto.</p>
+
+                <div class="rm-steps">
+                    <div class="rm-step">
+                        <div class="rm-step-num">1</div>
+                        <div class="rm-step-body">
+                            <h4>Consulta gratuita y análisis de tu caso</h4>
+                            <p>Revisamos tu situación, cuánto tiempo llevas en España y qué documentos tienes. Te decimos honestamente si aplicas y cuál es la mejor vía para ti.</p>
+                        </div>
+                    </div>
+                    <div class="rm-step">
+                        <div class="rm-step-num">2</div>
+                        <div class="rm-step-body">
+                            <h4>Reunimos y revisamos toda tu documentación</h4>
+                            <p>Te indicamos exactamente qué hace falta, te ayudamos a conseguir lo que falta y lo revisamos todo antes de presentarlo para evitar errores.</p>
+                        </div>
+                    </div>
+                    <div class="rm-step">
+                        <div class="rm-step-num">3</div>
+                        <div class="rm-step-body">
+                            <h4>Presentamos tu solicitud (entre el 1 de abril y el 30 de junio)</h4>
+                            <p>Gestionamos la presentación telemática o presencial y nos aseguramos de que quede registrada correctamente con tu número de expediente.</p>
+                        </div>
+                    </div>
+                    <div class="rm-step">
+                        <div class="rm-step-num">4</div>
+                        <div class="rm-step-body">
+                            <h4>Seguimiento de tu expediente</h4>
+                            <p>Controlamos el estado de tu solicitud. Si la administración pide más información, actuamos de inmediato para no perder el plazo de subsanación.</p>
+                        </div>
+                    </div>
+                    <div class="rm-step">
+                        <div class="rm-step-num">5</div>
+                        <div class="rm-step-body">
+                            <h4>Obtienes tu permiso y tramitas la TIE</h4>
+                            <p>Con la resolución favorable, te acompañamos a sacar tu Tarjeta de Identidad de Extranjero (TIE) en comisaría. Tu vida regular en España comienza aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             G. ¿QUÉ PERMISO OBTENDRÁS?
+        ════════════════════════════════════════ -->
+        <section class="rm-section rm-section-dark" style="padding-top:0;">
+            <div class="container reveal-up" style="border-top:1px solid rgba(212,175,55,0.15); padding-top:5rem;">
+                <span class="rm-label" style="color:#D4AF37;"><i class="ri-award-line"></i> El resultado</span>
+                <h2 class="rm-section-title">¿Qué permiso voy a conseguir?</h2>
+                <p class="rm-section-subtitle">No es un simple papel temporal. Es una autorización real de residencia y trabajo.</p>
+
+                <div class="rm-permit-grid">
+                    <div class="rm-permit-card">
+                        <div class="rm-permit-icon"><i class="ri-user-line"></i></div>
+                        <h3>Adultos</h3>
+                        <span class="rm-permit-duration">1 año</span>
+                        <p>Autorización inicial de residencia y trabajo, renovable. Puedes trabajar legalmente, cotizar a la Seguridad Social y acceder a servicios públicos.</p>
+                    </div>
+                    <div class="rm-permit-card">
+                        <div class="rm-permit-icon"><i class="ri-parent-line"></i></div>
+                        <h3>Menores y jóvenes integrados</h3>
+                        <span class="rm-permit-duration">Hasta 5 años</span>
+                        <p>Permiso de mayor duración para quienes están en el sistema educativo o de protección, facilitando una transición estable a la vida adulta.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top:2rem; font-size:0.9rem; color:rgba(255,255,255,0.5); max-width:680px;">
+                    Una vez obtengas el permiso, funcionan las reglas normales de renovación de extranjería. Con el tiempo y cumpliendo los requisitos, puedes optar a la residencia de larga duración.
+                </p>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             H. FAQ
+        ════════════════════════════════════════ -->
+        <section class="rm-section">
+            <div class="container reveal-up">
+                <span class="rm-label"><i class="ri-question-line"></i> Preguntas frecuentes</span>
+                <h2 class="rm-section-title">Dudas que mucha gente tiene</h2>
+                <p class="rm-section-subtitle">Respuestas claras, sin tecnicismos.</p>
+
+                <div class="rm-faq">
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            ¿Qué pasa si no tengo empadronamiento?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            El empadronamiento es importante pero no es el único documento válido. Puedes complementar o sustituirlo con facturas de suministros a tu nombre, contratos de alquiler, informes médicos, certificados escolares de tus hijos o cualquier documento que acredite que estabas viviendo aquí. Cuantos más documentos, mejor. Nuestro equipo te ayuda a construir ese historial.
+                        </div>
+                    </div>
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            ¿Puedo solicitar la regularización aunque no tenga trabajo?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            Sí. No es obligatorio tener un contrato de trabajo previo en todos los casos. Puedes presentar una oferta de empleo, estar inscrito en el SEPE (paro), haber hecho cursos de formación o acreditar medios económicos propios o familiares. La idea es demostrar que quieres y puedes integrarte laboralmente.
+                        </div>
+                    </div>
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            ¿Esta regularización tiene coste?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            Sí, hay tasas administrativas que paga la Administración, similares a las de cualquier trámite de extranjería. Además, contar con un abogado especializado supone honorarios profesionales, pero significa que tu expediente está bien preparado y tienes menos riesgo de que te lo denieguen por un error formal. Consulta con nosotros sin compromiso.
+                        </div>
+                    </div>
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            ¿Qué pasa si me lo deniegan?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            Si la solicitud es denegada, tienes derecho a recurrir la resolución. Es por eso que trabajar con un abogado desde el principio es tan importante: una solicitud bien preparada reduce mucho la posibilidad de denegación y, si ocurre, ya tienes a alguien que conoce tu caso para recurrir.
+                        </div>
+                    </div>
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            Llegué a España en enero de 2026, ¿puedo solicitarlo igualmente?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            No para esta regularización extraordinaria. La norma exige demostrar presencia en España antes del 31 de diciembre de 2025. Si llegaste después de esa fecha, existen otras vías de arraigo o permisos de trabajo ordinarios que podemos estudiar contigo.
+                        </div>
+                    </div>
+                    <div class="rm-faq-item">
+                        <div class="rm-faq-q" onclick="toggleFaq(this)">
+                            ¿Es lo mismo que el arraigo social que ya existía?
+                            <i class="ri-add-line"></i>
+                        </div>
+                        <div class="rm-faq-a">
+                            No exactamente. El arraigo social habitual requiere 3 años de estancia y un contrato de trabajo. Esta regularización extraordinaria es una medida especial con condiciones distintas y un plazo de presentación muy limitado (solo 3 meses). Si ya llevas tiempo intentando regularizarte por arraigo y no lo has conseguido, esta puede ser tu oportunidad.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════
+             I. CTA FINAL
+        ════════════════════════════════════════ -->
+        <section class="rm-cta-final">
+            <div class="container">
+                <h2>El plazo es de solo 3 meses.<br><span style="color:#D4AF37; font-style:italic;">No lo dejes para después.</span></h2>
+                <p>Cuanto antes empieces a preparar tu documentación, más tranquila será la solicitud. Nuestro equipo lleva años gestionando expedientes de extranjería y conoce cada detalle del proceso.</p>
+                <div class="rm-cta-btns">
+                    <a href="https://wa.me/34629030475" class="btn-wa-hero">
+                        <i class="ri-whatsapp-line"></i> Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Fixed WhatsApp -->
+    <a href="https://wa.me/34629030475" class="float-wa" aria-label="WhatsApp">
+        <i class="ri-whatsapp-fill"></i>
+    </a>
+
+    <!-- ── Doc Checklist Popup ── -->
+    <div id="doc-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="doc-popup-title">
+        <div id="doc-popup">
+            <button id="doc-popup-close" aria-label="Cerrar">&times;</button>
+            <div class="doc-popup-icon"><i class="ri-folder-check-line"></i></div>
+            <h3 id="doc-popup-title">¿Te ayudamos con los documentos que faltan?</h3>
+            <p>Nuestro equipo puede orientarte, gestionarte los documentos que te faltan y preparar toda tu documentación para que tu expediente sea lo más sólido posible.</p>
+            <div class="doc-popup-btns">
+                <a href="https://wa.me/34629030475?text=Hola%2C%20estoy%20reuniendo%20documentaci%C3%B3n%20para%20la%20regularizaci%C3%B3n%20y%20necesito%20ayuda%20con%20algunos%20documentos." class="doc-popup-btn-wa" target="_blank" rel="noopener">
+                    <i class="ri-whatsapp-line"></i> Consulta gratuita por WhatsApp
+                </a>
+                <a href="tel:+34629030475" class="doc-popup-btn-tel">
+                    <i class="ri-phone-line"></i> Llamar ahora — 629 030 475
+                </a>
+            </div>
+            <button class="doc-popup-dismiss" id="doc-popup-dismiss">Prefiero seguir yo solo por ahora</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        // Header toggle
+        function toggleLlamanosMenu(e) {
+            e.stopPropagation();
+            const wrap = e.currentTarget.closest('.btn-llamanos-wrap');
+            wrap.classList.toggle('open');
+        }
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.btn-llamanos-wrap.open').forEach(function (el) { el.classList.remove('open'); });
+        });
+
+        // FAQ accordion
+        function toggleFaq(el) {
+            const item = el.closest('.rm-faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.rm-faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        // Doc checklist popup — shows 6s after first checkbox is ticked
+        (function () {
+            const overlay = document.getElementById('doc-popup-overlay');
+            let popupTimer = null;
+            let popupShown = false;
+
+            function showPopup() {
+                if (popupShown) return;
+                popupShown = true;
+                overlay.classList.add('visible');
+                document.getElementById('doc-popup').focus();
+            }
+
+            function closePopup() {
+                overlay.classList.remove('visible');
+            }
+
+            function schedulePopup() {
+                if (popupShown || popupTimer) return;
+                popupTimer = setTimeout(showPopup, 6000);
+            }
+
+            // Intercept doc-item clicks to schedule popup on first check
+            document.querySelectorAll('.rm-doc-item').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    // After toggle, check if any item is checked
+                    const anyChecked = document.querySelector('.rm-doc-item.checked') !== null;
+                    if (anyChecked) {
+                        schedulePopup();
+                    } else {
+                        // All unchecked — cancel pending timer
+                        if (popupTimer) {
+                            clearTimeout(popupTimer);
+                            popupTimer = null;
+                        }
+                    }
+                });
+            });
+
+            document.getElementById('doc-popup-close').addEventListener('click', closePopup);
+            document.getElementById('doc-popup-dismiss').addEventListener('click', closePopup);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closePopup();
+            });
+        })();
+
+        // Countdown to June 30, 2026 23:59:59
+        (function () {
+            const target = new Date('2026-06-30T23:59:59');
+            function update() {
+                const now = new Date();
+                const diff = target - now;
+                if (diff <= 0) {
+                    document.getElementById('cd-days').textContent = '00';
+                    document.getElementById('cd-hours').textContent = '00';
+                    document.getElementById('cd-mins').textContent = '00';
+                    document.getElementById('cd-secs').textContent = '00';
+                    return;
+                }
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+            }
+            update();
+            setInterval(update, 1000);
+        })();
+    </script>
+</body>
+</html>
