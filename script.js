@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (lastScrollY > 50) {
                     if (!header.classList.contains('scrolled')) {
                         header.classList.add('scrolled');
-                        if (typeof gsap !== 'undefined') {
+                        if (typeof gsap !== 'undefined' && window.innerWidth > 768) {
                             gsap.fromTo(header,
                                 { backgroundColor: '#3d5265', backdropFilter: 'blur(0px)' },
                                 {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     if (header.classList.contains('scrolled')) {
                         header.classList.remove('scrolled');
-                        if (typeof gsap !== 'undefined') {
+                        if (typeof gsap !== 'undefined' && window.innerWidth > 768) {
                             gsap.fromTo(header,
                                 { backgroundColor: 'rgba(61, 82, 101, 0.82)' },
                                 {
@@ -688,7 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderText(currentIndex);
 
         // Interval rotatorio
-        setInterval(rotate, 1800);
+        setInterval(rotate, window.innerWidth <= 768 ? 4000 : 1800);
     }
     initRotatingText();
 
