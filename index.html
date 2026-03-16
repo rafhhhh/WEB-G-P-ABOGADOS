@@ -392,7 +392,7 @@
                 <div class="globe-container" id="globe-container">
                     <!-- Curved flags text — behind the canvas/sphere -->
                     <div class="globe-curved-wrapper" aria-hidden="true">
-                        <svg class="globe-curved-svg" viewBox="0 0 1440 200" overflow="visible">
+                        <svg class="globe-curved-svg" viewBox="0 0 1440 400" overflow="visible">
                             <text id="measure-text" xml:space="preserve"
                                 style="visibility:hidden;opacity:0;pointer-events:none;"></text>
                             <defs>
@@ -440,8 +440,8 @@
             const samples = (isMobile || isLowEnd) ? 8000 : 16000;
 
             const config = {
-                width: width * 2,
-                height: width * 2,
+                width: width * dpr,
+                height: width * dpr,
                 devicePixelRatio: dpr,
                 phi: 0,
                 theta: 0.3,
@@ -476,12 +476,12 @@
                     rs += velocity;
 
                     if (pointerInteracting === null) {
-                        phi += 0.005;
+                        phi += isMobile ? 0.002 : 0.005;
                     }
 
                     state.phi = phi + rs;
-                    state.width = width * 2;
-                    state.height = width * 2;
+                    state.width = width * dpr;
+                    state.height = width * dpr;
                 }
             };
 
