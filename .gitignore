@@ -4,6 +4,5 @@ venv/
 .DS_Store
 *.docx
 *.pdf
-# Temporary files
-/tmp/
+*.HEIC
 .claude/
